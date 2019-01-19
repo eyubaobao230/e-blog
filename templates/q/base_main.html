@@ -1,0 +1,51 @@
+{% extends 'q/base.html' %}
+
+{% block title %}
+    首页_鄂鱼个人博客
+{% endblock %}
+
+{% block meta %}
+<meta name="keywords" content="230个人博客,鄂鱼个人博客,个人博客模板,230" />
+<meta name="description" content="230个人博客，是一个站在web前端设计之路的男程序员个人网站。" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% endblock %}
+
+{% block css %}
+{% endblock %}
+
+{% block js %}
+{% endblock %}
+
+{% block header %}
+<header class="header-navigation" id="header">
+  <nav><div class="logo"><a href="{% url 'eblog:index' %}">鄂鱼个人博客</a></div>
+    <h2 id="mnavh"><span class="navicon"></span></h2>
+    <ul id="starlist">
+      <li><a href="{% url 'eblog:index' %}">网站首页</a></li>
+      <li><a href="{% url 'eblog:share' %}">我的相册</a></li>
+      <li><a href="{% url 'eblog:list' %}">我的日记</a></li>
+      <li><a href="{% url 'eblog:about' %}">关于我</a></li>
+      <li><a href="{% url 'eblog:gbook' %}">留言</a></li>
+      <li><a href="{% url 'edblog:login' %}">作者登录</a></li>
+    </ul>
+</nav>
+</header>
+{% endblock %}
+
+{% block content %}
+{% endblock %}
+
+{% block footer %}
+<footer>
+  <p>Design by <a href="http://www.yangqq.com" target="_blank">鄂鱼个人博客</a> <a href="/">蜀ICP备11002373号-1</a></p>
+</footer>
+<a href="#" class="cd-top">Top</a>
+{%endblock%}
+
+{% block js2 %}
+{% endblock %}
+
+
+
+
+

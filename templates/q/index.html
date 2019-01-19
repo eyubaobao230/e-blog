@@ -1,0 +1,91 @@
+{% extends 'q/base_main.html' %}
+
+{% block title %}
+    鄂鱼-博客首页
+{% endblock %}
+
+{% block css %}
+<link href="/static/q/css/base.css" rel="stylesheet">
+<link href="/static/q/css/index.css" rel="stylesheet">
+<link href="/static/q/css/m.css" rel="stylesheet">
+{% endblock %}
+
+{% block js %}
+<script src="/static/q/js/jquery.min.js" type="text/javascript"></script>
+<script type="text/q/javascript" src="/static/q/js/comm.js"></script>
+<!--[if lt IE 9]>
+<script src="/static/q/js/modernizr.js"></script>
+<![endif]-->
+{% endblock %}
+
+{% block content %}
+<article>
+  <aside class="l_box">
+      <div class="about_me">
+        <h2>关于我</h2>
+        <ul>
+          <i><img src="/static/q/images/20.jpg"></i>
+          <p><b>鄂鱼</b>，一个90后草根！09年入行。一直潜心研究Python技术，一边工作一边积累经验。</p>
+        </ul>
+      </div>
+      <div class="wdxc">
+        <h2>我的相册</h2>
+        <ul>
+          <li><a href="/"><img src="/static/q/images/1.jpg"></a></li>
+          <li><a href="/"><img src="/static/q/images/2.jpg"></a></li>
+          <li><a href="/"><img src="/static/q/images/3.jpg"></a></li>
+          <li><a href="/"><img src="/static/q/images/4.jpg"></a></li>
+          <li><a href="/"><img src="/static/q/images/5.jpg"></a></li>
+          <li><a href="/"><img src="/static/q/images/6.jpg"></a></li>
+        </ul>
+      </div>
+      <div class="search">
+        <form action="/e/search/index.php" method="post" name="searchform" id="searchform">
+          <input name="keyboard" id="keyboard" class="input_text" value="请输入关键字词" style="color: rgb(153, 153, 153);" onfocus="if(value=='请输入关键字词'){this.style.color='#000';value=''}" onblur="if(value==''){this.style.color='#999';value='请输入关键字词'}" type="text">
+          <input name="show" value="title" type="hidden">
+          <input name="tempid" value="1" type="hidden">
+          <input name="tbname" value="news" type="hidden">
+          <input name="Submit" class="input_submit" value="搜索" type="submit">
+        </form>
+      </div>
+      <div class="fenlei">
+        <h2>文章分类</h2>
+        <ul>
+          <li><a href="/">学无止境（33）</a></li>
+          <li><a href="/">日记（19）</a></li>
+          <li><a href="/">慢生活（520）</a></li>
+          <li><a href="/">美文欣赏（40）</a></li>
+        </ul>
+      </div>
+      <div class="tuijian">
+        <h2>站长推荐</h2>
+        <ul>
+          <li><a href="/">阿拉胖是一个可爱的小姑凉</a></li>
+          <li><a href="/">阿拉胖真的是一个可爱的小姑凉啊</a></li>
+        </ul>
+      </div>
+      <div class="links">
+        <h2>友情链接</h2>
+        <ul>
+          <a href="http://www.yangqq.com">鄂鱼个人博客</a> <a href="http://www.yangqq.com">鄂鱼博客</a>
+        </ul>
+      </div>
+      <div class="guanzhu">
+        <h2>关注我 么么哒</h2>
+        <ul>
+          <img src="/static/q/images/20.jpg">
+        </ul>
+      </div>
+  </aside>
+  <main class="r_box">
+    {% for i in page %}
+    <li><i><a href="/"><img src="/static/q/images/20.jpg"></a></i>
+      <h3><a href="{% url 'eblog:info' i.id %}">{{ i.title }}</a></h3>
+      <p>{{ i.desc }}</p>
+    </li>
+    {% endfor %}
+
+  </main>
+</article>
+{% endblock %}
+
